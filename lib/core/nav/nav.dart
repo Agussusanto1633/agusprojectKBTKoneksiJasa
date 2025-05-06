@@ -17,7 +17,6 @@ class Nav {
     );
   }
 
-
   static void back(BuildContext context, [dynamic result]) {
     if (Navigator.canPop(context)) {
       Navigator.pop(context, result);

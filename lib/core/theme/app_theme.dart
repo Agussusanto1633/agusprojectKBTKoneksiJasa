@@ -6,38 +6,36 @@ import 'color_value.dart';
 
 class AppThemeData {
   static ThemeData getThemeLight() {
-    Color primary90Color = ColorValue.primary90Color;
-    final Map<int, Color> primary90ColorMap = {
-      50: primary90Color,
-      100: primary90Color,
-      200: primary90Color,
-      300: primary90Color,
-      400: primary90Color,
-      500: primary90Color,
-      600: primary90Color,
-      700: primary90Color,
-      800: primary90Color,
-      900: primary90Color,
+    Color primaryColor = ColorValue.primaryColor;
+    final Map<int, Color> primaryColorMap = {
+      50: primaryColor,
+      100: primaryColor,
+      200: primaryColor,
+      300: primaryColor,
+      400: primaryColor,
+      500: primaryColor,
+      600: primaryColor,
+      700: primaryColor,
+      800: primaryColor,
+      900: primaryColor,
     };
     final MaterialColor primaryMaterialColor = MaterialColor(
-      primary90Color.value,
-      primary90ColorMap,
+      primaryColor.value,
+      primaryColorMap,
     );
-
     return ThemeData(
-      primaryColor: primary90Color,
+      primaryColor: primaryColor,
       primarySwatch: primaryMaterialColor,
       brightness: Brightness.light,
       scaffoldBackgroundColor: Colors.white,
-
       appBarTheme: AppBarTheme(
         toolbarHeight: 56.h,
         backgroundColor: Colors.white,
         elevation: 0,
-        titleTextStyle: GoogleFonts.poppins(
+        titleTextStyle: GoogleFonts.mulish(
           fontSize: 16,
           fontWeight: FontWeight.bold,
-          color: ColorValue.netralColor,
+          color: ColorValue.darkColor,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(10.r)),
@@ -46,15 +44,15 @@ class AppThemeData {
 
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          disabledBackgroundColor: ColorValue.primary90Color.withOpacity(0.4),
+          disabledBackgroundColor: ColorValue.primaryColor.withOpacity(0.4),
           disabledForegroundColor: Colors.white,
           foregroundColor: Colors.white,
-          backgroundColor: ColorValue.primary90Color,
+          backgroundColor: ColorValue.primaryColor,
           minimumSize: Size(double.infinity, 50.h),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.r),
           ),
-          textStyle: GoogleFonts.poppins(
+          textStyle: GoogleFonts.mulish(
             color: Colors.white,
             fontSize: 12.sp,
             fontWeight: FontWeight.w600,
@@ -62,61 +60,89 @@ class AppThemeData {
         ),
       ),
       textTheme: TextTheme(
-        bodySmall: GoogleFonts.poppins(
+        /// Display Text Style
+        // Regular 28
+        displayLarge: GoogleFonts.mulish(
+          fontSize: 28.sp,
+          fontWeight: FontWeight.w400,
+          color: ColorValue.darkColor,
+        ),
+        // Bold 24
+        displayMedium: GoogleFonts.mulish(
+          fontSize: 24.sp,
+          fontWeight: FontWeight.w700,
+          color: ColorValue.darkColor,
+        ),
+        // Bold 20
+        displaySmall: GoogleFonts.mulish(
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w700,
+          color: ColorValue.darkColor,
+        ),
+        /// Title Text Style
+        // Bold 18
+        titleLarge: GoogleFonts.mulish(
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+          color: ColorValue.darkColor,
+        ),
+        // Bold 16
+        titleMedium: GoogleFonts.mulish(
+          fontSize: 16,
+          fontWeight: FontWeight.w700,
+          color: ColorValue.darkColor,
+        ),
+        // Bold 14
+        titleSmall: GoogleFonts.mulish(
+          fontSize: 14,
+          fontWeight: FontWeight.w700,
+          color: ColorValue.darkColor,
+        ),
+        /// Body Text Style
+        // Bold 12
+        bodyLarge: GoogleFonts.mulish(
           fontSize: 12,
-          fontWeight: FontWeight.normal,
-          color: ColorValue.netralColor,
+          fontWeight: FontWeight.w700,
+          color: ColorValue.darkColor,
         ),
         // Regular 12
-        bodyMedium: GoogleFonts.poppins(
+        bodyMedium: GoogleFonts.mulish(
           fontSize: 12,
-          fontWeight: FontWeight.w600,
-          color: ColorValue.netralColor,
+          fontWeight: FontWeight.w400,
+          color: ColorValue.darkColor,
         ),
-        // Semi Bold 12
-        bodyLarge: GoogleFonts.poppins(
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
-          color: ColorValue.netralColor,
+        // Regular 10
+        bodySmall: GoogleFonts.mulish(
+          fontSize: 10,
+          fontWeight: FontWeight.w400,
+          color: ColorValue.darkColor,
         ),
-        // Bold 12
-        labelLarge: GoogleFonts.poppins(
-          fontSize: 14,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
-        // Bold 14 (Button Text)
-        titleMedium: GoogleFonts.poppins(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-          color: ColorValue.netralColor,
-        ), // Bold 16 (Subtitle 2)
       ),
       inputDecorationTheme: InputDecorationTheme(
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: ColorValue.primary20Color),
+          borderSide: BorderSide(color: ColorValue.primaryColor),
           borderRadius: BorderRadius.circular(8.r),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: ColorValue.primary20Color),
+          borderSide: BorderSide(color: ColorValue.primaryColor),
           borderRadius: BorderRadius.circular(8.r),
         ),
         disabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: ColorValue.primary20Color),
+          borderSide: BorderSide(color: ColorValue.primaryColor),
           borderRadius: BorderRadius.circular(8.r),
         ),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: ColorValue.primary20Color),
+          borderSide: BorderSide(color: ColorValue.primaryColor),
           borderRadius: BorderRadius.circular(8.r),
         ),
         errorBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: ColorValue.primary20Color),
+          borderSide: BorderSide(color: ColorValue.primaryColor),
           borderRadius: BorderRadius.circular(8.r),
         ),
-        activeIndicatorBorder: BorderSide(color: ColorValue.primary20Color),
-        outlineBorder: BorderSide(color: ColorValue.primary20Color),
+        activeIndicatorBorder: BorderSide(color: ColorValue.primaryColor),
+        outlineBorder: BorderSide(color: ColorValue.primaryColor),
         focusedErrorBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: ColorValue.primary20Color),
+          borderSide: BorderSide(color: ColorValue.primaryColor),
           borderRadius: BorderRadius.circular(8.r),
         ),
       ),
