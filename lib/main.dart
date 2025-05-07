@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:servista/features/home/page/home_page.dart';
 import 'package:servista/home_dummy.dart';
 
 import 'core/theme/app_style.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(360, 640),
       minTextAdapt: true,
       builder: (_, child) {
         return MaterialApp(
@@ -30,6 +31,6 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const HomeDummy(),
+      child: const HomePage(),
     );  }
 }
