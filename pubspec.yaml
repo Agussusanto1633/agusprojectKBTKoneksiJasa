@@ -48,6 +48,7 @@ dependencies:
   flutter_svg: ^2.1.0
   google_sign_in: ^6.3.0
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -74,7 +75,7 @@ flutter:
   assets:
      - assets/images/auth/
      - assets/images/splash/
-     - assets/icons/auth/
+     - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
