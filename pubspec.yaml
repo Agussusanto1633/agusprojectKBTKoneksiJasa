@@ -47,6 +47,7 @@ dependencies:
   firebase_auth: ^5.5.3
   flutter_svg: ^2.1.0
   google_sign_in: ^6.3.0
+  pin_code_fields: ^8.0.1
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,7 @@ flutter:
      - assets/images/auth/
      - assets/images/splash/
      - assets/images/nav_bar/
+     - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
