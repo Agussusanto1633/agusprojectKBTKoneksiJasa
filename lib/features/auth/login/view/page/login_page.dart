@@ -7,6 +7,7 @@ import 'package:servista/core/custom_widgets/custom_button_widget.dart';
 import 'package:servista/core/theme/color_value.dart';
 import 'package:servista/home_dummy.dart';
 
+import '../../../../../core/nav_bar/nav_bar.dart';
 import '../../bloc/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -53,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                     if (userCredential.user != null) {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const HomeDummy()),
+                        MaterialPageRoute(builder: (context) => const NavBar()),
                       );
                     }
                   } catch (e) {
