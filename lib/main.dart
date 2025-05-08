@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:servista/features/auth/login/view/page/login_otp_page.dart';
 import 'package:servista/features/auth/login/view/page/login_page.dart';
 import 'package:servista/features/auth/login/view/page/login_phone_page.dart';
+import 'package:servista/features/home/page/search_service_page.dart';
 import 'package:servista/features/splash/view/page/splash_page.dart';
+import 'package:servista/features/home/page/home_page.dart';
 import 'package:servista/home_dummy.dart';
 
 import 'core/theme/app_style.dart';
@@ -39,6 +41,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const LoginPhonePage(),
+      child: const SearchServicePage(),
+
     );  }
 }
