@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "544012380224",
+    "project_id": "servista-e0e0f",
+    "storage_bucket": "servista-e0e0f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544012380224:android:336bc5e9d9020e255757a5",
+        "android_client_info": {
+          "package_name": "com.example.servista"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMRygXdZuEIkmZaWC2PQ-Zahw-TIVT240"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
