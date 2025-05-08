@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:servista/core/nav_bar/nav_bar.dart';
 import 'package:servista/home_dummy.dart';
 
 import '../../../auth/login/view/page/login_page.dart';
@@ -27,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
       // User sudah login, arahkan ke HomePage
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeDummy()),
+        MaterialPageRoute(builder: (context) => const NavBar()),
       );
     } else {
       // User belum login, arahkan ke LoginPage

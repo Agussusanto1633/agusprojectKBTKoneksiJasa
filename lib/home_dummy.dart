@@ -36,7 +36,7 @@ class _HomeDummyState extends State<HomeDummy> {
             height: 100,
             width: 250,
             color: ColorValue.primaryColor,
-            child: Center(child: Text("Hello World", style: textTheme.bodyLarge)),
+            child: Center(child: Text("Logout", style: textTheme.bodyLarge)),
 
           ),
         ),
