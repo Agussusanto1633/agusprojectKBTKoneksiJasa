@@ -9,8 +9,10 @@ import 'package:servista/features/splash/view/page/splash_page.dart';
 import 'package:servista/features/home/page/home_page.dart';
 import 'package:servista/home_dummy.dart';
 
+import 'core/nav_bar/nav_bar.dart';
 import 'core/theme/app_style.dart';
 import 'core/theme/app_theme.dart';
+import 'features/profile/page/profile_page.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const SearchServicePage(),
+      child: ProfilePage(),
 
     );  }
 }
