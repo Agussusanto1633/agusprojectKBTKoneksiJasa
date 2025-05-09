@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:servista/features/home/page/search_service_page.dart';
 
 import '../../../core/scroll/scroll_behavior.dart';
 import '../../../core/theme/app_style.dart';
@@ -17,13 +18,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<String> locations = ['Malang', 'Surabaya', 'Jakarta', 'Bandung'];
   String selectedLocation = 'Malang';
-  final TextEditingController _searchController = TextEditingController();
-
-  @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,39 +89,40 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 40.h,
-                            width: 219.w,
-                            padding: EdgeInsets.symmetric(horizontal: 10.w),
-                            decoration: BoxDecoration(
-                              color: ColorValue.dark2Color,
-                              borderRadius: BorderRadius.circular(10.r),
-                            ),
-                            child: Center(
-                              child: TextField(
-                                controller: _searchController,
-                                style: textTheme.bodyMedium?.copyWith(
-                                  color: Colors.white,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SearchServicePage(),
                                 ),
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  enabledBorder: InputBorder.none,
-                                  focusedBorder: InputBorder.none,
-                                  isDense: true,
-                                  contentPadding: EdgeInsets.zero,
-                                  hintText:
-                                      "Cari lokasi di ${selectedLocation.toLowerCase()}",
-                                  hintStyle: textTheme.bodyMedium?.copyWith(
-                                    color: Colors.white.withOpacity(0.5),
-                                  ),
-                                  icon: Icon(
+                              );
+                            },
+                            child: Container(
+                              height: 40.h,
+                              width: 219.w,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10.w,
+                                vertical: 15.w,
+                              ),
+                              decoration: BoxDecoration(
+                                color: ColorValue.dark2Color,
+                                borderRadius: BorderRadius.circular(10.r),
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(
                                     Icons.search,
                                     color: Colors.white.withOpacity(0.5),
                                   ),
-                                ),
-                                onChanged: (value) {
-                                  print('User is typing: $value');
-                                },
+                                  SizedBox(width: 5.w),
+                                  Text(
+                                    "Cari lokasi di $selectedLocation",
+                                    style: textTheme.bodyMedium?.copyWith(
+                                      color: Colors.white.withOpacity(0.5),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),

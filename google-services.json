@@ -18,7 +18,15 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.servista",
-            "certificate_hash": "1/1e9e49769e41d13a99cb634409cd6ce65ebd54e"
+            "certificate_hash": "11e9e49769e41d13a99cb634409cd6ce65ebd54e"
+          }
+        },
+        {
+          "client_id": "544012380224-i9inoc422r77b7luv4gptk9fhrmilg0j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.servista",
+            "certificate_hash": "0f1c00ac67b1b0572ae404b7b0683e022d5741bc"
           }
         },
         {

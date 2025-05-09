@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:servista/core/theme/color_value.dart';
+import 'package:servista/features/home/page/home_page.dart';
+import 'package:servista/features/service/pages/service_page.dart';
 import 'package:servista/home_dummy.dart';
 
 class NavBar extends StatefulWidget {
@@ -14,8 +16,8 @@ class _NavBarState extends State<NavBar> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = const [
-    HomeDummy(),
-    HomeDummy(),
+    HomePage(),
+    ServicePage(),
     HomeDummy(),
     HomeDummy(),
   ];
@@ -29,7 +31,10 @@ class _NavBarState extends State<NavBar> {
   TextStyle _labelStyle(int index) {
     return TextStyle(
       fontWeight: _selectedIndex == index ? FontWeight.bold : FontWeight.normal,
-      color: _selectedIndex == index ? ColorValue.darkColor : ColorValue.darkColor.withOpacity(0.5),
+      color:
+          _selectedIndex == index
+              ? ColorValue.darkColor
+              : ColorValue.darkColor.withOpacity(0.5),
     );
   }
 
