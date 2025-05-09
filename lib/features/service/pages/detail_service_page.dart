@@ -247,7 +247,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                   bottom: 0,
                 ),
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: 100,
+                itemCount: 10,
                 itemBuilder: (context, index) {
                   return Container(
                     color: Colors.blue,
