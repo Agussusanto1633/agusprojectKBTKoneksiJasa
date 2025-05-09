@@ -24,17 +24,23 @@ class _SearchServicePageState extends State<SearchServicePage> {
         backgroundColor: ColorValue.darkColor,
         centerTitle: true,
         titleSpacing: 0,
+        automaticallyImplyLeading: false,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(width: 20.w),
-            Container(
-              alignment: Alignment.center,
-              child: SvgPicture.asset(
-                "assets/icons/back-button.svg",
-                width: 32.w,
-                height: 32.w,
-                fit: BoxFit.fill,
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                alignment: Alignment.center,
+                child: SvgPicture.asset(
+                  "assets/icons/back-button.svg",
+                  width: 32.w,
+                  height: 32.w,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
             Spacer(),

@@ -32,7 +32,10 @@ class _NavBarState extends State<NavBar> {
   TextStyle _labelStyle(int index) {
     return TextStyle(
       fontWeight: _selectedIndex == index ? FontWeight.bold : FontWeight.normal,
-      color: _selectedIndex == index ? ColorValue.darkColor : ColorValue.darkColor.withOpacity(0.5),
+      color:
+          _selectedIndex == index
+              ? ColorValue.darkColor
+              : ColorValue.darkColor.withOpacity(0.5),
     );
   }
 

@@ -77,6 +77,7 @@ flutter:
      - assets/images/auth/
      - assets/images/splash/
      - assets/images/nav_bar/
+     - assets/images/service/
      - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see

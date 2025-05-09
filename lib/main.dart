@@ -43,7 +43,6 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: NavBar(),
-
+      child: const SplashPage(),
     );  }
 }
