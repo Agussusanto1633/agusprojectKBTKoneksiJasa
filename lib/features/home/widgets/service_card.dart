@@ -24,7 +24,28 @@ class ServiceCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10.r),
+          boxShadow: [
+            BoxShadow(
+              color: Color(0x19181320),
+              blurRadius: 0,
+              offset: Offset(0, 0),
+              spreadRadius: 0,
+            ),
+            BoxShadow(
+              color: Color(0x16181320),
+              blurRadius: 35.32,
+              offset: Offset(0, 35.32),
+              spreadRadius: 0,
+            ),
+            BoxShadow(
+              color: Color(0x02181320),
+              blurRadius: 56.10,
+              offset: Offset(0, 141.30),
+              spreadRadius: 0,
+            ),
+          ],
         ),
+
         child: Column(
           children: [
             Padding(
