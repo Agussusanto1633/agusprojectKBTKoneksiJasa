@@ -24,6 +24,7 @@ class AppThemeData {
       primaryColorMap,
     );
     return ThemeData(
+      fontFamily: GoogleFonts.mulish().fontFamily,
       primaryColor: primaryColor,
       primarySwatch: primaryMaterialColor,
       brightness: Brightness.light,
