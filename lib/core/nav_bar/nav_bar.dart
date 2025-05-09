@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:servista/core/theme/color_value.dart';
 import 'package:servista/features/home/page/home_page.dart';
-import 'package:servista/features/service/pages/service_page.dart';
 import 'package:servista/home_dummy.dart';
 
 class NavBar extends StatefulWidget {
@@ -17,7 +16,7 @@ class _NavBarState extends State<NavBar> {
 
   final List<Widget> _pages = const [
     HomePage(),
-    ServicePage(),
+    HomeDummy(),
     HomeDummy(),
     HomeDummy(),
   ];
