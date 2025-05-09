@@ -34,7 +34,7 @@ class AppThemeData {
         backgroundColor: Colors.white,
         elevation: 0,
         titleTextStyle: GoogleFonts.mulish(
-          fontSize: 16,
+          fontSize: 16.sp,
           fontWeight: FontWeight.bold,
           color: ColorValue.darkColor,
         ),
@@ -83,38 +83,38 @@ class AppThemeData {
         /// Title Text Style
         // Bold 18
         titleLarge: GoogleFonts.mulish(
-          fontSize: 18,
+          fontSize: 18.sp,
           fontWeight: FontWeight.w700,
           color: ColorValue.darkColor,
         ),
         // Bold 16
         titleMedium: GoogleFonts.mulish(
-          fontSize: 16,
+          fontSize: 16.sp,
           fontWeight: FontWeight.w700,
           color: ColorValue.darkColor,
         ),
         // Bold 14
         titleSmall: GoogleFonts.mulish(
-          fontSize: 14,
+          fontSize: 14.sp,
           fontWeight: FontWeight.w700,
           color: ColorValue.darkColor,
         ),
         /// Body Text Style
         // Bold 12
         bodyLarge: GoogleFonts.mulish(
-          fontSize: 12,
+          fontSize: 12.sp,
           fontWeight: FontWeight.w700,
           color: ColorValue.darkColor,
         ),
         // Regular 12
         bodyMedium: GoogleFonts.mulish(
-          fontSize: 12,
+          fontSize: 12.sp,
           fontWeight: FontWeight.w400,
           color: ColorValue.darkColor,
         ),
         // Regular 10
         bodySmall: GoogleFonts.mulish(
-          fontSize: 10,
+          fontSize: 10.sp,
           fontWeight: FontWeight.w400,
           color: ColorValue.darkColor,
         ),
