@@ -3,7 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:servista/core/theme/color_value.dart';
+import 'package:servista/features/auth/login/bloc/auth_service.dart';
 import 'package:servista/features/profile/widgets/profile_menu.dart';
+
+import '../../auth/login/view/page/login_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -107,7 +110,20 @@ class _ProfilePageState extends State<ProfilePage> {
                         icon: "assets/icons/calendar.svg",
                       ),
                       Gap(38.h),
-                      ProfileMenu(title: "Keluar", icon: "assets/icons/logout.svg", isArrow: false),
+                      GestureDetector(
+                          onTap: () {
+                            AuthService().signOut().then((value) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  LoginPage()),
+                              );
+                            }).catchError((error) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text("Error signing out: $error")),
+                              );
+                            });
+                          },
+                          child: ProfileMenu(title: "Keluar", icon: "assets/icons/logout.svg", isArrow: false)),
                     ],
                   ),
                 ),
