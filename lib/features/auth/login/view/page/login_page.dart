@@ -12,7 +12,6 @@ import 'package:servista/home_dummy.dart';
 
 import '../../../../../core/nav_bar/nav_bar.dart';
 import '../../bloc/auth_event.dart';
-import '../../bloc/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -22,7 +21,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
