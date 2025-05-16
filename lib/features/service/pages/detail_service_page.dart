@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/theme/app_style.dart';
 import '../../../core/theme/color_value.dart';
+import '../widgets/bottom_sheets_widgets/booking_flow.dart';
 
 class DetailServicePage extends StatefulWidget {
   const DetailServicePage({super.key});
@@ -73,7 +74,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                     fit: BoxFit.cover,
                     image:
                         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9WYzQWEjZck6kOZi8VIec_mK2Der3rh-6Mw&s",
-                    placeholder: 'assets/images/placeholder.png',
+                    placeholder: 'assets/images/service/placeholder.png',
                   ),
                   Align(
                     alignment: Alignment.bottomRight,
@@ -93,8 +94,8 @@ class _DetailServicePageState extends State<DetailServicePage>
                               child: Container(
                                 decoration: ShapeDecoration(
                                   image: DecorationImage(
-                                    image: NetworkImage(
-                                      "https://placehold.co/50x50",
+                                    image: AssetImage(
+                                      'assets/images/service/placeholder.png',
                                     ),
                                     fit: BoxFit.cover,
                                   ),
@@ -312,10 +313,15 @@ class _DetailServicePageState extends State<DetailServicePage>
                                   padding: EdgeInsets.only(bottom: 4.w),
                                   child: Row(
                                     children: [
-                                      Text(
-                                        "Cuci Eksterior & Interior $index",
-                                        style: textTheme.bodySmall?.copyWith(
-                                          fontWeight: FontWeight.w600,
+                                      SizedBox(
+                                        width:
+                                            MediaQuery.sizeOf(context).width /
+                                            2,
+                                        child: Text(
+                                          "Cuci Eksterior & Interior $index",
+                                          style: textTheme.bodySmall?.copyWith(
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                         ),
                                       ),
                                       Text(
@@ -464,9 +470,9 @@ class _DetailServicePageState extends State<DetailServicePage>
                   ),
                   elevation: 0,
                 ),
-                onPressed: () {
-                  // TODO: Aksi saat tombol ditekan
-                },
+
+                onPressed: () => startBookingFlow(context),
+
                 child: Text(
                   "Sewa Sekarang",
                   style: GoogleFonts.poppins(
@@ -493,7 +499,6 @@ class _DetailServicePageState extends State<DetailServicePage>
     return textPainter.size;
   }
 
-  // Fungsi untuk memperbesar gambar
   void _showImageDialog(String imageUrl) {
     showDialog(
       context: context,
@@ -506,7 +511,6 @@ class _DetailServicePageState extends State<DetailServicePage>
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
                     side: BorderSide(width: 1, color: Colors.white),
-                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 child: ClipRRect(
