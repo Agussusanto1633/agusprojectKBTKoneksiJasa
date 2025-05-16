@@ -9,6 +9,7 @@ import 'package:servista/features/home/page/search_service_page.dart';
 import 'package:servista/features/service/pages/detail_service_page.dart';
 import 'package:servista/features/splash/view/page/splash_page.dart';
 import 'package:servista/features/home/page/home_page.dart';
+import 'package:servista/firestore/firestore_page.dart';
 import 'package:servista/home_dummy.dart';
 
 import 'core/nav_bar/nav_bar.dart';
@@ -45,6 +46,6 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const DetailBookingPage(),
+      child: const FirestorePage(),
     );  }
 }
