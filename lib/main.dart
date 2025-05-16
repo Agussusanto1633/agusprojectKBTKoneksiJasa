@@ -45,6 +45,6 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const HomePage(),
+      child: const DetailBookingPage(),
     );  }
 }
