@@ -38,4 +38,24 @@ class ServiceRepository {
       throw Exception('Failed to fetch service: $e');
     }
   }
+
+  Future<List<ServiceModel>> getPromoServices() async {
+    try {
+      final QuerySnapshot snapshot = await _firestore
+          .collection('services')
+          .where('discount', isGreaterThan: 0)
+          .get();
+
+      return snapshot.docs.map((doc) {
+        return ServiceModel.fromJson(
+          doc.data() as Map<String, dynamic>,
+          doc.id,
+        );
+      }).toList();
+    } catch (e) {
+      throw Exception('Failed to fetch promo services: $e');
+    }
+  }
+
+
 }

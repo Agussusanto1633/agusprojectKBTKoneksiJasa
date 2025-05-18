@@ -8,6 +8,7 @@ import '../../../../../core/theme/color_value.dart';
 
 Future<DateTime?> showCalendarBottomSheet(BuildContext context) {
   return showModalBottomSheet<DateTime>(
+    backgroundColor: Colors.white,
     context: context,
     isScrollControlled: true,
     builder: (context) {

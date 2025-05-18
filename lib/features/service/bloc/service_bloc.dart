@@ -11,6 +11,7 @@ class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
         super(ServiceInitial()) {
     on<LoadServices>(_onLoadServices);
     on<LoadServiceDetail>(_onLoadServiceDetail);
+    on<LoadPromoServices>(_onLoadPromoServices);
   }
 
   Future<void> _onLoadServices(
@@ -38,6 +39,19 @@ class ServiceBloc extends Bloc<ServiceEvent, ServiceState> {
       } else {
         emit(const ServiceLoadFailure('Service not found'));
       }
+    } catch (e) {
+      emit(ServiceLoadFailure(e.toString()));
+    }
+  }
+
+  Future<void> _onLoadPromoServices(
+      LoadPromoServices event,
+      Emitter<ServiceState> emit,
+      ) async {
+    emit(ServiceLoading());
+    try {
+      final services = await _serviceRepository.getPromoServices();
+      emit(ServicePromoLoaded(services));
     } catch (e) {
       emit(ServiceLoadFailure(e.toString()));
     }

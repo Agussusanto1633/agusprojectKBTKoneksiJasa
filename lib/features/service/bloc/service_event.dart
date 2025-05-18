@@ -17,3 +17,5 @@ class LoadServiceDetail extends ServiceEvent {
   @override
   List<Object> get props => [serviceId];
 }
+
+class LoadPromoServices extends ServiceEvent {}

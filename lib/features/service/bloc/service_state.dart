@@ -30,7 +30,14 @@ class ServiceDetailLoaded extends ServiceState {
   List<Object> get props => [service];
 }
 
+class ServicePromoLoaded extends ServiceState {
+  final List<ServiceModel> services;
 
+  const ServicePromoLoaded(this.services);
+
+  @override
+  List<Object> get props => [services];
+}
 
 class ServiceLoadFailure extends ServiceState {
   final String message;
