@@ -34,6 +34,7 @@ Future<String?> showTimeBottomSheet(
   ).format(selectedDate);
 
   return showModalBottomSheet<String>(
+    backgroundColor: Colors.white,
     context: context,
     isScrollControlled: true,
     builder: (context) {

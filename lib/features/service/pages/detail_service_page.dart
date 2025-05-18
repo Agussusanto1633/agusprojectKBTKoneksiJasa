@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:servista/features/service/model/service_model.dart';
 
 import '../../../core/theme/app_style.dart';
 import '../../../core/theme/color_value.dart';
 import '../widgets/bottom_sheets_widgets/booking_flow.dart';
 
 class DetailServicePage extends StatefulWidget {
-  const DetailServicePage({super.key});
+  final ServiceModel? service;
+  const DetailServicePage({super.key, required this.service});
 
   @override
   State<DetailServicePage> createState() => _DetailServicePageState();
@@ -57,12 +59,17 @@ class _DetailServicePageState extends State<DetailServicePage>
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Container(
                 alignment: Alignment.centerLeft,
-                child: SvgPicture.asset(
-                  "assets/icons/back-button.svg",
-                  width: 32.w,
-                  height: 32.w,
-                  color: Colors.white,
-                  fit: BoxFit.fill,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: SvgPicture.asset(
+                    "assets/icons/back-button.svg",
+                    width: 32.w,
+                    height: 32.w,
+                    color: Colors.white,
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             ),
@@ -73,7 +80,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                   FadeInImage.assetNetwork(
                     fit: BoxFit.cover,
                     image:
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9WYzQWEjZck6kOZi8VIec_mK2Der3rh-6Mw&s",
+                        widget.service!.image,
                     placeholder: 'assets/images/service/placeholder.png',
                   ),
                   Align(
@@ -138,7 +145,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Layanan Potong Rumput",
+                        widget.service!.name,
                         style: textTheme.displaySmall,
                       ),
                       Container(
@@ -161,14 +168,14 @@ class _DetailServicePageState extends State<DetailServicePage>
                       ),
                       SizedBox(width: 3.w),
                       Text(
-                        "4.2",
+                        "${widget.service!.rating}",
                         style: textTheme.bodyLarge?.copyWith(
                           color: ColorValue.dark2Color,
                         ),
                       ),
                       SizedBox(width: 2.w),
                       Text(
-                        "(40)",
+                        "(${widget.service!.reviews.length})",
                         style: textTheme.bodySmall?.copyWith(
                           color: ColorValue.dark2Color,
                         ),
@@ -181,7 +188,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                       ),
                       SizedBox(width: 4.w),
                       Text(
-                        "10% Discount area",
+                        "${widget.service!.discount}% Discount area",
                         style: textTheme.bodyLarge?.copyWith(
                           color: ColorValue.dark2Color,
                         ),
@@ -226,7 +233,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Jl. Merdeka Barat No.45, RT.4/RW.5, Blimbing, Kec. Blimbing, Kota Malang, Daerah Khusus Kota Malang 65122",
+                              widget.service!.address,
                               style: textTheme.bodySmall,
                             ),
                             SizedBox(height: 5.w),
@@ -288,14 +295,14 @@ class _DetailServicePageState extends State<DetailServicePage>
                             fontWeight: FontWeight.w600,
                           ),
                         );
-                        height = (textSize.height + 4.w) * 80 + 16.w;
+                        height = (textSize.height + 4.w) * widget.service!.facilities.length + 16.w;
                       } else {
                         final textSize = _measureTextSize(
                           textTheme.bodySmall!.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
                         );
-                        height = ((textSize.height * 2) + 24.w + 10) * 5 + 24.w;
+                        height = ((textSize.height * 2) + 24.w + 10) * widget.service!.reviews.length + 24.w;
                       }
 
                       return SizedBox(
@@ -307,7 +314,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                               physics: const NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
                               padding: EdgeInsets.only(top: 16.w),
-                              itemCount: 80,
+                              itemCount: widget.service!.facilities.length,
                               itemBuilder: (context, index) {
                                 return Padding(
                                   padding: EdgeInsets.only(bottom: 4.w),
@@ -318,14 +325,14 @@ class _DetailServicePageState extends State<DetailServicePage>
                                             MediaQuery.sizeOf(context).width /
                                             2,
                                         child: Text(
-                                          "Cuci Eksterior & Interior $index",
+                                          widget.service!.facilities[index].name,
                                           style: textTheme.bodySmall?.copyWith(
                                             fontWeight: FontWeight.w600,
                                           ),
                                         ),
                                       ),
                                       Text(
-                                        ":   Termasuk",
+                                        widget.service!.facilities[index].detail.toString(),
                                         style: textTheme.bodySmall?.copyWith(
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -339,7 +346,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                               shrinkWrap: true,
                               padding: EdgeInsets.only(top: 16.w),
                               physics: const NeverScrollableScrollPhysics(),
-                              itemCount: 5,
+                              itemCount: widget.service!.reviews.length,
                               itemBuilder: (context, index) {
                                 return Column(
                                   children: [
@@ -360,7 +367,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                                         ),
                                         SizedBox(width: 12.w),
                                         Text(
-                                          "Andi",
+                                          widget.service!.reviews[index].userName,
                                           style: textTheme.bodySmall?.copyWith(
                                             fontWeight: FontWeight.w600,
                                             color: ColorValue.dark2Color,
@@ -385,7 +392,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                                             ),
                                           ),
                                           child: Text(
-                                            "5/5",
+                                            "${widget.service!.reviews[index].rating}/5",
                                             style: textTheme.bodyLarge
                                                 ?.copyWith(fontSize: 8.sp),
                                           ),
@@ -397,7 +404,7 @@ class _DetailServicePageState extends State<DetailServicePage>
                                         SizedBox(width: 36.w),
                                         Expanded(
                                           child: Text(
-                                            "Layanan cuci mobil sangat memuaskan, mobil saya bersih dan wangi seperti baru!",
+                                            widget.service!.reviews[index].message,
                                             style: textTheme.bodySmall,
                                           ),
                                         ),
@@ -448,7 +455,9 @@ class _DetailServicePageState extends State<DetailServicePage>
                   ),
                 ),
                 Text(
-                  "Rp. 300.000",
+                  "Rp. ${widget.service!.price.toString().replaceAllMapped(
+                    RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+                    (Match m) => '${m[1]}.',)}",
                   style: GoogleFonts.poppins(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w700,

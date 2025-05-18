@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:servista/core/nav/nav.dart';
 import 'package:servista/features/home/page/search_service_page.dart';
 import 'package:servista/features/service/bloc/service_state.dart';
+import 'package:servista/features/service/pages/detail_service_page.dart';
 import 'package:servista/features/service/repositories/service_repository.dart';
 
 import '../../../core/scroll/scroll_behavior.dart';
@@ -28,7 +30,8 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    serviceBloc = ServiceBloc(serviceRepository: ServiceRepository())..add(LoadServices());
+    serviceBloc = ServiceBloc(serviceRepository: ServiceRepository())
+      ..add(LoadServices());
   }
 
   @override
@@ -45,11 +48,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: ColorValue.bgFrameColor,
       body: MultiBlocProvider(
-        providers: [
-          BlocProvider<ServiceBloc>.value(
-            value: serviceBloc,
-          ),
-        ],
+        providers: [BlocProvider<ServiceBloc>.value(value: serviceBloc)],
         child: ScrollConfiguration(
           behavior: NoOverScrollEffectBehavior(),
           child: SingleChildScrollView(
@@ -187,7 +186,9 @@ class _HomePageState extends State<HomePage> {
                                           value: value,
                                           child: Text(
                                             value,
-                                            style: TextStyle(color: Colors.white),
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
                                           ),
                                         );
                                       }).toList(),
@@ -236,33 +237,44 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                     SizedBox(height: 16.h),
-                    BlocBuilder<ServiceBloc, ServiceState>(builder: (context, state) {
-                      if (state is ServiceLoading) {
-                        return Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      } else if (state is ServiceLoadSuccess) {
-                        print("Loading services... ${state.toString()}");
-                        return SizedBox(
-                          height: 285.h,
-                          width: MediaQuery.of(context).size.width,
-                          child: ListView.builder(
-                            itemCount: state.services.length,
-                            scrollDirection: Axis.horizontal,
-                            shrinkWrap: true,
-                            padding: EdgeInsets.only(bottom: 60.h, left: 20.w),
-                            itemBuilder: (context, index) {
-                              return HomeCard(service: state.services[index], onTap: () {  },);
-                            },
-                          ),
-                        );
-                      } else if (state is ServiceLoadFailure) {
-                        return Center(
-                          child: Text("Error loading services"),
-                        );
-                      }
-                      return Container();
-                    },)
+                    BlocBuilder<ServiceBloc, ServiceState>(
+                      builder: (context, state) {
+                        if (state is ServiceLoading) {
+                          return Center(child: CircularProgressIndicator());
+                        } else if (state is ServiceLoadSuccess) {
+                          print("Loading services... ${state.toString()}");
+                          return SizedBox(
+                            height: 285.h,
+                            width: MediaQuery.of(context).size.width,
+                            child: ListView.builder(
+                              itemCount: state.services.length,
+                              scrollDirection: Axis.horizontal,
+                              shrinkWrap: true,
+                              padding: EdgeInsets.only(
+                                bottom: 60.h,
+                                left: 20.w,
+                              ),
+                              itemBuilder: (context, index) {
+                                return HomeCard(
+                                  service: state.services[index],
+                                  onTap: () {
+                                    Nav.to(
+                                      context,
+                                      DetailServicePage(
+                                        service: state.services[index],
+                                      ),
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          );
+                        } else if (state is ServiceLoadFailure) {
+                          return Center(child: Text("Error loading services"));
+                        }
+                        return Container();
+                      },
+                    ),
                     // SizedBox(
                     //   height: 285.h,
                     //   width: MediaQuery.of(context).size.width,

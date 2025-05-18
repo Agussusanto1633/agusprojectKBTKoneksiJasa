@@ -22,6 +22,7 @@ Future<String?> showWorkerBottomSheet(
   final header = "${toBeginningOfSentenceCase(dateFormatted)} | $selectedTime";
 
   return showModalBottomSheet<String>(
+    backgroundColor: Colors.white,
     context: context,
     isScrollControlled: true,
     builder: (context) {
