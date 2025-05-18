@@ -180,19 +180,25 @@ class _DetailServicePageState extends State<DetailServicePage>
                           color: ColorValue.dark2Color,
                         ),
                       ),
-                      SizedBox(width: 8.w),
-                      SvgPicture.asset(
-                        "assets/icons/discount.svg",
-                        height: 12.w,
-                        width: 12.w,
+                      if (widget.service!.discount != 0)
+                      Row(
+                        children: [
+                          SizedBox(width: 8.w),
+                          SvgPicture.asset(
+                            "assets/icons/discount.svg",
+                            height: 12.w,
+                            width: 12.w,
+                          ),
+                          SizedBox(width: 4.w),
+                          Text(
+                            "${widget.service!.discount}% Discount area",
+                            style: textTheme.bodyLarge?.copyWith(
+                              color: ColorValue.dark2Color,
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(width: 4.w),
-                      Text(
-                        "${widget.service!.discount}% Discount area",
-                        style: textTheme.bodyLarge?.copyWith(
-                          color: ColorValue.dark2Color,
-                        ),
-                      ),
+
                     ],
                   ),
                   Container(

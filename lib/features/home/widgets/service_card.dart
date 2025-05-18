@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:servista/core/utils/utils.dart';
+import 'package:servista/features/service/model/service_model.dart';
 import 'package:servista/features/service/pages/detail_service_page.dart';
 
 import '../../../core/theme/color_value.dart';
 
 class ServiceCard extends StatelessWidget {
-  const ServiceCard({super.key});
+  final ServiceModel? service;
+  ServiceCard({super.key, this.service});
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-
     return InkWell(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => DetailServicePage(
-//service model dummy or null data
-          service: null,
+          service: service,
           )),
         );
       },
@@ -62,7 +63,8 @@ class ServiceCard extends StatelessWidget {
                     decoration: ShapeDecoration(
                       image: DecorationImage(
                         image: NetworkImage(
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9WYzQWEjZck6kOZi8VIec_mK2Der3rh-6Mw&s",
+                          service?.image ??
+                              "https://example.com/default_image.jpg",
                         ),
                         fit: BoxFit.cover,
                       ),
@@ -78,12 +80,12 @@ class ServiceCard extends StatelessWidget {
                       children: [
                         SizedBox(height: 9.w),
                         Text(
-                          "Layanan Potong Rumput",
+                          service?.name ?? "Service Name",
                           style: textTheme.titleSmall,
                         ),
                         SizedBox(height: 3.w),
                         Text(
-                          "Jln. Jend. Sudirman No.25",
+                          service?.address ?? "Service Address",
                           style: textTheme.bodySmall,
                         ),
                         SizedBox(height: 10.w),
@@ -96,15 +98,15 @@ class ServiceCard extends StatelessWidget {
                             ),
                             SizedBox(width: 4.w),
                             Text(
-                              "4.2",
+                              service?.rating.toString() ?? "4.5",
                               style: textTheme.bodySmall?.copyWith(
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
                             SizedBox(width: 2.w),
-                            Text("(40)", style: textTheme.bodySmall),
+                            Text("(${service?.reviews.length.toString()})", style: textTheme.bodySmall),
                             Spacer(),
-                            Text("300k", style: textTheme.titleSmall),
+                            Text(Utils.formatRupiah(service?.price).toString() ?? "100", style: textTheme.titleSmall),
                             SizedBox(width: 2.w),
                             Text("/jam", style: textTheme.bodySmall),
                           ],
