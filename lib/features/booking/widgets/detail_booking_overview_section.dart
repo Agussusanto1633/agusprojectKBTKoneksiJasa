@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:servista/core/theme/app_font_weight.dart';
 
 class DetailBookingOverviewSection extends StatelessWidget {
-  const DetailBookingOverviewSection({Key? key}) : super(key: key);
+  const DetailBookingOverviewSection({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:servista/core/nav_bar/nav_bar.dart';
-import 'package:servista/home_dummy.dart';
 
 import '../../../auth/login/view/page/login_page.dart';
 
@@ -45,7 +44,7 @@ class _SplashPageState extends State<SplashPage> {
       backgroundColor: const Color(0xffFFDB61),
       body: Center(
         child: Text(
-          "Servista",
+          "KoneksiJasa",
           style: TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.bold,

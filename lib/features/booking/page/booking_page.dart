@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:servista/features/booking/page/booking_ongoing_page.dart';
 
 import '../../../core/theme/color_value.dart';
 
 class BookingPage extends StatefulWidget {
-  const BookingPage({Key? key}) : super(key: key);
+  const BookingPage({super.key});
 
   @override
   State<BookingPage> createState() => _BookingPageState();

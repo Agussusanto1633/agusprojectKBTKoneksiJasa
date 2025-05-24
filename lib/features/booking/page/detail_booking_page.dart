@@ -9,7 +9,7 @@ import 'package:servista/features/booking/widgets/detail_booking_overview_sectio
 import 'package:servista/features/booking/widgets/detail_booking_service_details_section.dart';
 
 class DetailBookingPage extends StatefulWidget {
-  const DetailBookingPage({Key? key}) : super(key: key);
+  const DetailBookingPage({super.key});
 
   @override
   State<DetailBookingPage> createState() => _DetailBookingPageState();

@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                               decoration: ShapeDecoration(
                                 image: DecorationImage(
                                   image: NetworkImage(
-                                    "https://i.pinimg.com/236x/95/68/6a/95686a79fda78c1d70ca6bbc09587977.jpg",
+                                    "https://i.pinimg.com/736x/ba/59/92/ba5992f5aed6aa01a34f6e4e3834139e.jpg",
                                   ),
                                   fit: BoxFit.cover,
                                 ),

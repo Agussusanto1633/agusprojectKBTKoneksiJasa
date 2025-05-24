@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:servista/core/custom_widgets/custom_button_widget.dart';
 import 'package:servista/core/theme/color_value.dart';
 import 'package:servista/features/auth/login/bloc/auth_bloc.dart';
 import 'package:servista/features/auth/login/bloc/auth_state.dart';
-import 'package:servista/home_dummy.dart';
 
 import '../../../../../core/nav_bar/nav_bar.dart';
 import '../../bloc/auth_event.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -34,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Gap(120.h),
               Text(
-                "Servista",
+                "KoneksiJasa",
                 style: GoogleFonts.onest(
                   fontSize: 40.sp,
                   fontWeight: FontWeight.w700,
@@ -42,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Text(
-                "Welcome to Servista",
+                "Welcome to KoneksiJasa",
                 style: GoogleFonts.mulish(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,

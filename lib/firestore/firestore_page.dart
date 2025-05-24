@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class FirestorePage extends StatefulWidget {
-  const FirestorePage({Key? key}) : super(key: key);
+  const FirestorePage({super.key});
 
   @override
   State<FirestorePage> createState() => _FirestorePageState();

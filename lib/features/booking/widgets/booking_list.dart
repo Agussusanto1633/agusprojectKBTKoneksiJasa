@@ -11,11 +11,11 @@ class BookingList extends StatelessWidget {
   final String hour;
 
   const BookingList({
-    Key? key,
+    super.key,
     required this.title,
     required this.date,
     required this.hour,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class BookingList extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Servista",
+              "KoneksiJasa",
               style: GoogleFonts.mulish(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.bold,

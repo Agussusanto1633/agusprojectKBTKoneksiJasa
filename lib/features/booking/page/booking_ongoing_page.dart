@@ -5,7 +5,7 @@ import 'package:servista/core/theme/color_value.dart';
 import 'package:servista/features/booking/widgets/booking_list.dart';
 
 class BookingOngoingPage extends StatefulWidget {
-  const BookingOngoingPage({Key? key}) : super(key: key);
+  const BookingOngoingPage({super.key});
 
   @override
   State<BookingOngoingPage> createState() => _BookingOngoingPageState();
@@ -21,7 +21,7 @@ class _BookingOngoingPageState extends State<BookingOngoingPage> {
           Gap(20.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: BookingList(title: "Potong aaaaaa asd as da", date: "Sabtu, 3 Januari 2025", hour: "Pukul 18.00"),
+            child: BookingList(title: "Potong Rumput", date: "Sabtu, 3 Januari 2025", hour: "Pukul 18.00"),
           ),
         ],
       ),

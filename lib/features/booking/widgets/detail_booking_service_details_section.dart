@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailBookingServiceDetailsSection extends StatefulWidget {
-  const DetailBookingServiceDetailsSection({Key? key}) : super(key: key);
+  const DetailBookingServiceDetailsSection({super.key});
 
   @override
   State<DetailBookingServiceDetailsSection> createState() =>

@@ -10,7 +10,7 @@ class ProfileMenu extends StatelessWidget {
   //add optional bool parameter for isSelected
   final bool isArrow;
 
-   ProfileMenu({super.key, required this.title, required this.icon, this.isArrow = true});
+   const ProfileMenu({super.key, required this.title, required this.icon, this.isArrow = true});
 
   @override
   Widget build(BuildContext context) {

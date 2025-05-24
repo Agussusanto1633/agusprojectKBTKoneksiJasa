@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../core/theme/color_value.dart';
 
 class DetailBookingHeaderSection extends StatelessWidget {
-  const DetailBookingHeaderSection({Key? key}) : super(key: key);
+  const DetailBookingHeaderSection({super.key});
 
   @override
   Widget build(BuildContext context) {

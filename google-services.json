@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "544012380224-fh6c0ch6gkg0s4a8m9lirg6bl9494r4i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.servista",
+            "certificate_hash": "5d043efee63a9769c7dbe30b6eaf23ddd712a3c3"
+          }
+        },
+        {
           "client_id": "544012380224-fo33osujca98g492vtk4gvrpd10065ve.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -27,6 +35,14 @@
           "android_info": {
             "package_name": "com.example.servista",
             "certificate_hash": "0f1c00ac67b1b0572ae404b7b0683e022d5741bc"
+          }
+        },
+        {
+          "client_id": "544012380224-u3smr4qbjdacr190f2gp1n019ivguqul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.servista",
+            "certificate_hash": "fbc7d3a42ec8b52f2fef040f841d0c00d05e726f"
           }
         },
         {
